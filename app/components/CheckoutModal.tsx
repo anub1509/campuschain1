@@ -44,7 +44,7 @@ export default function CheckoutModal({ item, onClose }: { item: any, onClose: (
                 <p className="text-xs text-slate-500 uppercase tracking-widest mb-1">Algorand TestNet Receipt</p>
                 {/* REPLACE THIS URL WITH YOUR ACTUAL TX ID FROM STEP 1 */}
                 <a 
-                  href="https://testnet.explorer.perawallet.app/tx/YOUR_REAL_TXID_GOES_HERE" 
+                  href="https://testnet.explorer.perawallet.app/tx/RCXEFO2DTVJFUHUEOSIDQE3RIHSOC7Y2Z2GBIHOLIZK6YEWGZL7DIE4CGQ" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-blue-400 font-mono text-xs break-all hover:text-blue-300 transition-colors flex items-center justify-center gap-2"
