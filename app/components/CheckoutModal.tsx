@@ -77,9 +77,9 @@ export default function CheckoutModal({ item, onClose }: { item: any, onClose: (
                     <span className="font-mono text-xs text-slate-300 break-all leading-relaxed">{receiverId}</span>
                   </div>
 
-                  {/* Transaction Hash */}
+                  {/* Escrow Wallet Address */}
                   <div className="px-4 py-3 flex flex-col gap-1 text-left">
-                    <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">Transaction Hash</span>
+                    <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">Escrow Wallet Address</span>
                     <span className="font-mono text-xs text-green-400 break-all leading-relaxed">{txId}</span>
                   </div>
                 </div>
@@ -87,12 +87,12 @@ export default function CheckoutModal({ item, onClose }: { item: any, onClose: (
                 {/* Explorer link button */}
                 <div className="px-4 py-3 border-t border-slate-800 bg-black/20">
                   <a
-                    href={`https://lora.algokit.io/testnet/transaction/${txId}`}
+                    href={`https://lora.algokit.io/testnet/account/${txId}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 w-full bg-green-500/10 hover:bg-green-500/20 border border-green-500/30 hover:border-green-500/60 text-green-400 font-mono text-xs uppercase tracking-widest py-2.5 rounded-lg transition-all duration-200"
                   >
-                    Verify on Lora Explorer
+                    View Escrow Account on Lora
                     <span className="text-base leading-none">↗</span>
                   </a>
                 </div>
@@ -107,7 +107,7 @@ export default function CheckoutModal({ item, onClose }: { item: any, onClose: (
                     <span className="font-mono text-[10px] text-green-500 uppercase tracking-[0.2em]">Live · Lora Explorer</span>
                   </div>
                   <a
-                    href={`https://lora.algokit.io/testnet/transaction/${txId}`}
+                    href={`https://lora.algokit.io/testnet/account/${txId}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-mono text-[10px] text-slate-500 hover:text-green-400 uppercase tracking-widest transition-colors flex items-center gap-1"
@@ -117,7 +117,7 @@ export default function CheckoutModal({ item, onClose }: { item: any, onClose: (
                 </div>
                 {/* iframe embed */}
                 <iframe
-                  src={`https://lora.algokit.io/testnet/transaction/${txId}`}
+                  src={`https://lora.algokit.io/testnet/account/${txId}`}
                   className="w-full h-64 bg-slate-950"
                   style={{ border: "none", colorScheme: "dark" }}
                   title="Lora Algorand Explorer — Transaction Proof"
