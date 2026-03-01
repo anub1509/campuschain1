@@ -16,7 +16,7 @@ export default function CheckoutModal({ item, onClose }: { item: any, onClose: (
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-      <div className="bg-[#0b0b0b] border border-green-500/30 rounded-2xl w-full max-w-md overflow-hidden shadow-[0_0_40px_rgba(74,222,128,0.1)]">
+      <div className="bg-[#0b0b0b] border border-green-500/30 rounded-2xl w-full max-w-2xl overflow-hidden shadow-[0_0_40px_rgba(74,222,128,0.1)] max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center p-6 border-b border-slate-800">
           <h3 className="text-xl font-black text-white uppercase tracking-wide">Secure Escrow</h3>
           <button onClick={onClose} className="text-slate-500 hover:text-white font-bold text-xl">&times;</button>
@@ -98,6 +98,33 @@ export default function CheckoutModal({ item, onClose }: { item: any, onClose: (
                 </div>
               </div>
 
+              {/* ── Embedded Lora Explorer ── */}
+              <div className="w-full mt-2 rounded-xl overflow-hidden border border-green-500/20 shadow-[0_0_20px_rgba(74,222,128,0.05)]">
+                {/* iframe header bar */}
+                <div className="flex items-center justify-between px-4 py-2.5 bg-black border-b border-slate-800">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />
+                    <span className="font-mono text-[10px] text-green-500 uppercase tracking-[0.2em]">Live · Lora Explorer</span>
+                  </div>
+                  <a
+                    href={`https://lora.algokit.io/testnet/transaction/${txId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-[10px] text-slate-500 hover:text-green-400 uppercase tracking-widest transition-colors flex items-center gap-1"
+                  >
+                    Open Full Page <span>↗</span>
+                  </a>
+                </div>
+                {/* iframe embed */}
+                <iframe
+                  src={`https://lora.algokit.io/testnet/transaction/${txId}`}
+                  className="w-full h-64 bg-slate-950"
+                  style={{ border: "none", colorScheme: "dark" }}
+                  title="Lora Algorand Explorer — Transaction Proof"
+                  sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+                />
+              </div>
+
               <button onClick={() => { onClose(); }} className="mt-4 w-full bg-green-500 hover:bg-green-400 text-black font-bold py-3 rounded-xl transition-all">
                 Return to Dashboard
               </button>
@@ -109,4 +136,3 @@ export default function CheckoutModal({ item, onClose }: { item: any, onClose: (
     </div>
   );
 }
-
