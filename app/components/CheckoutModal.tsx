@@ -37,8 +37,27 @@ export default function CheckoutModal({ item, onClose }: { item: any, onClose: (
           {step === 3 && (
             <div className="flex flex-col items-center text-center py-8 gap-4">
               <div className="w-16 h-16 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center text-3xl border border-green-500/50">✓</div>
-              <h4 className="text-2xl font-black text-white uppercase mt-2">Funds Locked</h4>
-              <button onClick={onClose} className="mt-6 w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 rounded-xl border border-slate-700">Close</button>
+              <h4 className="text-2xl font-black text-white uppercase mt-2">Funds Locked in Smart Contract</h4>
+              
+              {/* THE REAL WEB3 PROOF */}
+              <div className="bg-slate-900 p-4 rounded-xl border border-slate-800 w-full mt-2">
+                <p className="text-xs text-slate-500 uppercase tracking-widest mb-1">Algorand TestNet Receipt</p>
+                {/* REPLACE THIS URL WITH YOUR ACTUAL TX ID FROM STEP 1 */}
+                <a 
+                  href="https://testnet.explorer.perawallet.app/tx/YOUR_REAL_TXID_GOES_HERE" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 font-mono text-xs break-all hover:text-blue-300 transition-colors flex items-center justify-center gap-2"
+                >
+                  View on Pera Explorer <span className="text-lg">↗</span>
+                </a>
+              </div>
+
+              <button onClick={() => {
+                onClose();
+              }} className="mt-4 w-full bg-green-500 hover:bg-green-400 text-black font-bold py-3 rounded-xl transition-all">
+                Return to Dashboard
+              </button>
             </div>
           )}
         </div>
